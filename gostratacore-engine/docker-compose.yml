@@ -1,9 +1,7 @@
 services:
 
   engine:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/gostratacore/gostratumengine:latest
 
     restart: unless-stopped
 
