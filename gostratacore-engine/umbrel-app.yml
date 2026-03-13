@@ -4,7 +4,7 @@ tagline: Multi-coin Stratum mining engine
 icon: icon.png
 category: mining
 version: "1.0.0"
-port: 3333
+port: 8080
 
 developer: GoStrataCore
 website: https://github.com/GoStrataCore/gostratumengine
