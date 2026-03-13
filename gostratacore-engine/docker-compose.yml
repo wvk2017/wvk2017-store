@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  engine:
+    image: ghcr.io/gostratacore/gostratumengine:latest
+    container_name: gostratacore-engine
+    restart: unless-stopped
+
+    ports:
+      - "3333:3333"
+      - "8080:8080"
+
+    volumes:
+      - ${APP_DATA_DIR}/data:/pool
+
+    networks:
+      - umbrel_main_network
+
+networks:
+  umbrel_main_network:
+    external: true
