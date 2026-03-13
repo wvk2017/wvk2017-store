@@ -6,7 +6,23 @@ category: mining
 version: "1.0.0"
 port: 8080
 
+description: >
+  GoStrataCore Engine is a lightweight multi-coin Stratum mining server
+  supporting BTC, BCH, FB, BSV, XEC and DGB.
+
 developer: GoStrataCore
 website: https://github.com/GoStrataCore/gostratumengine
 repo: https://github.com/GoStrataCore/gostratumengine
 support: https://github.com/GoStrataCore/gostratumengine/issues
+submitter: GoStrataCore
+
+gallery: []
+
+releaseNotes: >
+  Initial release of the GoStrataCore Engine.
+
+dependencies: []
+
+path: ""
+defaultUsername: ""
+defaultPassword: ""
