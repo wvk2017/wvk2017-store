@@ -3,7 +3,10 @@ version: "3.7"
 services:
 
   gostratacore-engine:
-    build: https://github.com/GoStrataCore/gostratumengine.git
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     restart: unless-stopped
 
     ports:
