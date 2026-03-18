@@ -11,7 +11,7 @@ services:
       - umbrel_main_network
 
   engine:
-    image: ghcr.io/gostratacore/gostratumengine:1.2.5
+    image: ghcr.io/gostratacore/gostratumengine:1.2.6
     restart: unless-stopped
 
     ports:
