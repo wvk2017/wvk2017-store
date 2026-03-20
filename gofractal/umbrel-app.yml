@@ -1,7 +1,7 @@
 manifestVersion: 1
-id: willitmod-dev-fractal
+id: gofractal
 category: bitcoin
-name: AxeFractal
+name: GoFractal
 version: "0.1.8"
 tagline: Fractal node + solo pool
 description: >-
@@ -9,7 +9,7 @@ description: >-
 
 
   Features:
-    - Axe-style dashboard for node sync and pool stats
+    - Go-style dashboard for node sync and pool stats
     - Difficulty presets (vardiff) tuned for home miners
     - Blocks view for solved blocks, plus optional history scan
     - Community support
@@ -51,7 +51,7 @@ widgets:
   - id: "sync"
     type: "text-with-progress"
     refresh: "5s"
-    endpoint: "axefractal-app:3000/api/widget/sync"
+    endpoint: "gofractal-app:3000/api/widget/sync"
     link: ""
     example:
       type: "text-with-progress"
@@ -63,7 +63,7 @@ widgets:
   - id: "pool"
     type: "three-stats"
     refresh: "30s"
-    endpoint: "axefractal-app:3000/api/widget/pool"
+    endpoint: "gofractal-app:3000/api/widget/pool"
     link: ""
     example:
       type: "three-stats"
