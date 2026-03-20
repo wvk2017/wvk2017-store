@@ -4,7 +4,7 @@ services:
   app_proxy:
     environment:
       # Use a unique DNS alias to avoid collisions on the host's shared Docker network.
-      APP_HOST: axefractal-app
+      APP_HOST: gofractal-app
       APP_PORT: 3000
       # Verify auth tokens using the same secret the auth-server uses.
       JWT_SECRET: "${JWT_SECRET}"
@@ -81,7 +81,7 @@ services:
             apps!="" && $$0==("rpcallowip=" apps){seenApps=1}
             END{exit(seenBind && seenApps ? 0 : 1)}
           ' "$$conf"; then
-            echo "[axefractal] Ensuring RPC bind/access settings in bitcoin.conf"
+            echo "[gofractal] Ensuring RPC bind/access settings in bitcoin.conf"
             awk -v apps="$$APPS_SUBNET" '
               BEGIN{seenBind=0; seenLocal=0; seenApps=0; seen10=0; seen172=0; seen192=0; injected=0}
               function mark_allow(line){
@@ -103,7 +103,7 @@ services:
                 if(injected==1) return
                 if(seenBind==0 || seenLocal==0 || seenApps==0 || seen10==0 || seen172==0 || seen192==0){
                   print ""
-                  print "# axefractal-rpc-access-v1"
+                  print "# gofractal-rpc-access-v1"
                   print "# Ensure RPC is reachable from other containers (app + pool)"
                   emit_missing()
                   print ""
@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/ellevix/axefractal-app:0.1.8
+    image: ghcr.io/ellevix/gofractal-app:0.1.8
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
@@ -220,10 +220,10 @@ services:
     networks:
       default:
         aliases:
-          - axefractal-app
+          - gofractal-app
       umbrel_main_network:
         aliases:
-          - axefractal-app
+          - gofractal-app
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
