@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
   app_proxy:
+    image: getumbrel/app-proxy:latest
     environment:
       # Use a unique DNS alias to avoid collisions on the host's shared Docker network.
       APP_HOST: gofractal-app
