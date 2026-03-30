@@ -209,6 +209,7 @@ services:
 
   app:
     image: ghcr.io/gostratacore/gofractal-app:0.3.1
+    user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
     depends_on:
