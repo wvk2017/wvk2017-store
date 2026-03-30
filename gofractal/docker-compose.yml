@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.2.9
+    image: ghcr.io/gostratacore/gofractal-app:0.3.0
     restart: on-failure
     stop_grace_period: 30s
     depends_on:
@@ -225,7 +225,7 @@ services:
           - gofractal-app
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - /var/lib/5tratumos/apps/gostratacore-engine/data:/data/apps/gostratacore-engine/data
+      - /var/lib/5tratumos/apps/gostratacore-engine:/data/apps/gostratacore-engine
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       BCH_RPC_HOST: "fractal"
