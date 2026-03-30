@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.2.4
+    image: ghcr.io/gostratacore/gofractal-app:0.2.6
     restart: on-failure
     stop_grace_period: 30s
     depends_on:
