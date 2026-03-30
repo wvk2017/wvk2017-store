@@ -2,7 +2,6 @@ version: "3.7"
 
 services:
   app_proxy:
-    image: getumbrel/app-proxy:latest
     environment:
       # Use a unique DNS alias to avoid collisions on the host's shared Docker network.
       APP_HOST: gofractal-app
@@ -13,9 +12,10 @@ services:
       - umbrel_main_network
 
   init:
-    image: alpine:3.19
+    image: alpine:3.22.1
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}:/appdata
     environment:
       APPS_SUBNET: "${NETWORK_IP}/16"
       RPC_USER: "fractal"
@@ -224,7 +224,7 @@ services:
         aliases:
           - gofractal-app
     volumes:
-        - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/data:/data
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       BCH_RPC_HOST: "fractal"
