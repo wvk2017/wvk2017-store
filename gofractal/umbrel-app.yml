@@ -82,3 +82,7 @@ backupIgnore:
   - data/node/chainstate
   - data/node/indexes
 submitter: Ellevix
+
+actions:
+  uninstall:
+    - bash -c "echo '🗑️ Removing FRACTAL config...' && rm -f /var/lib/5tratumos/apps/gostratacore-engine/data/pool/coins/fractal.json"
