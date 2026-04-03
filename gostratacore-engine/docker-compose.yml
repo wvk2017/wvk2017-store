@@ -21,7 +21,7 @@ services:
 
   engine:
     user: "1000:1000"
-    image: ghcr.io/gostratacore/gostratumengine:1.5.1
+    image: ghcr.io/gostratacore/gostratumengine:1.5.2
     restart: unless-stopped
 
     depends_on:
