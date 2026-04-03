@@ -208,7 +208,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.1
+    image: ghcr.io/gostratacore/gofractal-app:0.3.2
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
@@ -228,10 +228,10 @@ services:
       - ${APP_DATA_DIR}/data:/data
     environment:
       NETWORK_IP: "${NETWORK_IP}"
-      BCH_RPC_HOST: "fractal"
-      BCH_RPC_PORT: "32123"
-      BCH_RPC_USER: "fractal"
-      BCH_RPC_PASS: "${APP_PASSWORD}"
+      NODE_RPC_HOST: "fractal"
+      NODE_RPC_PORT: "32123"
+      NODE_RPC_USER: "fractal"
+      NODE_RPC_PASS: "${APP_PASSWORD}"
       CKPOOL_STATUS_DIR: "/data/pool/www/pool"
       APP_CHANNEL: "STABLE"
       BCHN_IMAGE: "ellevix/fractald:0.3.0"
