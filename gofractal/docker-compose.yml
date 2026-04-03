@@ -208,21 +208,13 @@ services:
       - ${APP_DATA_DIR}/data/pool/www:/www
 
   app:
-    image: ghcr.io/gostratacore/gofractal-app:0.3.14
+    image: ghcr.io/gostratacore/gofractal-app:0.3.50
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 30s
     depends_on:
       - fractal
       - ckpool
-
-    command:
-      - /bin/sh
-      - -c
-      - |
-        trap "echo '🗑️ Removing FRACTAL config...' && rm -f /var/lib/5tratumos/apps/gostratacore-engine/data/pool/coins/fractal.json" EXIT
-        exec python3 app.py
-
     ports:
       - "32122:3000/tcp"
     networks:
