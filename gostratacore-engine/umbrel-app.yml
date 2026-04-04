@@ -2,7 +2,7 @@ manifestVersion: 1
 id: gostratacore-engine
 category: bitcoin
 name: GSC Engine
-version: "1.5.5"
+version: "1.5.6"
 tagline: Multi-coin Stratum mining engine
 
 description: >-
