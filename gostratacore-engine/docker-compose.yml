@@ -13,15 +13,17 @@ services:
   init-permissions:
     image: alpine:3.19
     command: >
-      sh -c "mkdir -p /data/pool/coins /data/pool/logs &&
-             chown -R 1000:1000 /data"
+      sh -c "mkdir -p /data/pool/logs &&
+             mkdir -p /shared/gostratacore/coins &&
+             chown -R 1000:1000 /data /shared"
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      - /var/lib/5tratumos/shared:/shared
     restart: "no"
 
   engine:
     user: "1000:1000"
-    image: ghcr.io/gostratacore/gostratumengine:1.6.0
+    image: ghcr.io/gostratacore/gostratumengine:1.6.1
     restart: unless-stopped
 
     depends_on:
@@ -33,7 +35,6 @@ services:
       - "8080:8080"
 
     volumes:
-      - ${APP_DATA_DIR}/data/pool/coins:/pool/coins
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
       - /var/lib/5tratumos/shared/gostratacore/coins:/pool/coins
 
