@@ -21,7 +21,7 @@ services:
 
   engine:
     user: "1000:1000"
-    image: ghcr.io/gostratacore/gostratumengine:1.5.15
+    image: ghcr.io/gostratacore/gostratumengine:1.5.16
     restart: unless-stopped
 
     depends_on:
@@ -35,6 +35,7 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/pool/coins:/pool/coins
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
+      - /var/lib/5tratumos/apps:/var/lib/5tratumos/apps
 
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
