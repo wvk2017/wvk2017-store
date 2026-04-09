@@ -8,7 +8,7 @@
     }
   ],
   "btcaddress": "${PAYOUT_ADDRESS}",
-  "btcsig": "/mined by Ellevix on 5tratumOS/",
+  "btcsig": "/ckpool mined by Wvk2017 on 5tratumOS/",
   "mindiff": 1,
   "startdiff": 16,
   "maxdiff": 0,
