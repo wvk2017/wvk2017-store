@@ -174,7 +174,7 @@ services:
       - "32126:32126/tcp" # P2P
     volumes:
       - ${APP_DATA_DIR}/data/node:/data
-
+      - ${APP_DATA_DIR}/data/templates/fractal-entrypoint.sh:/fractal-entrypoint.sh:ro
   ckpool:
     image: ghcr.io/getumbrel/docker-ckpool-solo:590fb2a
     entrypoint: ["/bin/sh"]
@@ -206,6 +206,8 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/pool/config:/config:ro
       - ${APP_DATA_DIR}/data/pool/www:/www
+      - ${APP_DATA_DIR}/data/templates/ckpool-entrypoint.sh:/ckpool-entrypoint.sh:ro
+    entrypoint: ["/bin/sh", "/ckpool-entrypoint.sh"]
 
   app:
     image: ghcr.io/gostratacore/gofractal-app:0.3.52
@@ -225,8 +227,7 @@ services:
         aliases:
           - gofractal-app
     volumes:
-      - ${APP_DATA_DIR}/data:/data
-      - /var/lib/5tratumos/apps/gostratacore-engine:/var/lib/5tratumos/apps/gostratacore-engine  # 👈 ADD THIS LINE
+      - ${APP_DATA_DIR}/data:/data # 👈 ADD THIS LINE
     environment:
       NETWORK_IP: "${NETWORK_IP}"
       NODE_RPC_HOST: "fractal"
