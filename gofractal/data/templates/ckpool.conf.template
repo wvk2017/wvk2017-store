@@ -8,7 +8,7 @@
     }
   ],
   "btcaddress": "${PAYOUT_ADDRESS}",
-  "btcsig": "/ckpool mined by Wvk2017 on UmbrelOs/",
+  "btcsig": "/ckpool mined by Wvk2017 on 5tratumOS/",
   "mindiff": 1,
   "startdiff": 16,
   "maxdiff": 0,
