@@ -2,7 +2,7 @@ manifestVersion: 1
 id: gofractal
 category: bitcoin
 name: GoFractal
-version: "0.3.53"
+version: "0.3.56"
 tagline: Fractal node + solo pool
 description: >-
   Run a Fractal Bitcoin full node and an integrated solo Stratum v1 pool (ckpool) as a single app.
@@ -81,4 +81,4 @@ backupIgnore:
   - data/node/blocks
   - data/node/chainstate
   - data/node/indexes
-submitter: Ellevix
+submitter: GoStrataCore
